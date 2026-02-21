@@ -38,4 +38,32 @@ class ProductMapperTest {
                         tuple(2L, "Wireless Mouse", new BigDecimal("19.99"))
                 );
     }
+
+    @Test
+    void makeProduct_shouldMapAllFields() {
+        ProductDTO productDTO = new ProductDTO(3L, "Mechanical Keyboard", new BigDecimal("89.50"));
+
+        Product product = ProductMapper.makeProduct(productDTO);
+
+        assertThat(product.getId()).isEqualTo(3L);
+        assertThat(product.getName()).isEqualTo("Mechanical Keyboard");
+        assertThat(product.getPriceAmount()).isEqualByComparingTo("89.50");
+    }
+
+    @Test
+    void makeProductList_shouldMapAllProductsInOrder() {
+        List<ProductDTO> productDTOs = List.of(
+                new ProductDTO(1L, "Laptop Stand", new BigDecimal("29.90")),
+                new ProductDTO(2L, "Wireless Mouse", new BigDecimal("19.99"))
+        );
+
+        List<Product> result = ProductMapper.makeProductList(productDTOs);
+
+        assertThat(result)
+                .extracting(Product::getId, Product::getName, Product::getPriceAmount)
+                .containsExactly(
+                        tuple(1L, "Laptop Stand", new BigDecimal("29.90")),
+                        tuple(2L, "Wireless Mouse", new BigDecimal("19.99"))
+                );
+    }
 }
