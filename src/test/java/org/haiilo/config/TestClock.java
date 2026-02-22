@@ -5,7 +5,7 @@ import java.time.Instant;
 import java.time.ZoneOffset;
 
 public final class TestClock {
-    public static final Instant FIXED_INSTANT = Instant.parse("2028-02-15T12:00:00Z");
+    public static final Instant FIXED_INSTANT = Instant.parse("2026-02-15T12:00:00Z");
 
     private TestClock() {
     }
