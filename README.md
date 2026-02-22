@@ -3,8 +3,8 @@
 This is  a Spring Boot backend project for products, offers, and shopping cart total calculation.
 The implementation is for a code challenge and many decisions are taken based on some requirements and assumptions.
 The production ready implementation would be more different which would be enriched by checks, controls, exception handling etc.
-But at least this example shows the coding style and how any problem is approached. 
-Spring Boot backend project for products, offers, and shopping cart total calculation.
+But at least this example shows the coding style and how any problem is approached.
+
 - Money values are handled with `BigDecimal`.
 - Offer calculations support percentage and exact-price discount modes.
 - All prices assumed as the same currency.
